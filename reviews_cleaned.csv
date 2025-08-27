@@ -71,6 +71,7 @@ Gold Semaver,Gokhan Efe,Beautiful place. The breakfast is said to be good. I had
 Gold Semaver,Bunyamin Engin,Hookah and ambiance is super!,dataset/menu/gold_semaver_bunyamin_engin.png,5,menu,29
 Gold Semaver,Mehmet Mercan,They have a problem with the service; but if you're going to drink tea; they do it well. Your tea is always hot over the fire.,dataset/taste/gold_semaver_mehmet_mercan.png,3,taste,126
 Gold Semaver,Hakan Tekelioglu,Some of the coffee I wanted came spilled; the coffee tasted dry. Also; my wife's order was wrong.,dataset/taste/gold_semaver_hakan_tekelioglu.png,1,taste,97
+Gold Semaver,Mehrin Kuru,Great.,dataset/outdoor_atmosphere/gold_semaver_mehrin_guru.png,4,outdoor_atmosphere,6
 Gold Semaver,Geordon Omand,Lovely; affordable seafront spot to while away the afternoon smoking nargile and playing backgammon (tavla). Super hospitable employees and enjoyable ambience.,dataset/indoor_atmosphere/gold_semaver_geordon_omand.png,5,indoor_atmosphere,159
 Gold Semaver,Ali Bes,A cheap and delicious place. If you are passing by; you should not continue without having a cup of tea.,dataset/taste/gold_semaver_ali_bes.png,4,taste,104
 Gold Semaver,Bayram Kale,Seaside great view!,dataset/outdoor_atmosphere/gold_semaver_bayram_kale.png,5,outdoor_atmosphere,19
@@ -157,6 +158,7 @@ Tatbak,Nafican Tatlici,It's nice; but it's very late. I place an order; it arriv
 Tatbak,Mehmet Erbagci,A delicious doner.,dataset/outdoor_atmosphere/tatbak_mehmet_erbagci.png,4,outdoor_atmosphere,18
 Tatbak,Suleyman Konus,the ambiance was nice.,dataset/indoor_atmosphere/tatbak_suleyman_konus.png,4,indoor_atmosphere,22
 Tatbak,Ahmet Takir,Interest was good; but doner was a complete disaster. First of all; it came cold; there was no proper sauce in it; there was so much onion that I could not taste the meat at all.,dataset/menu/tatbak_ahmet_takir.png,2,menu,178
+Tatbak,Mert Cakir,Awesomeee,dataset/taste/tatbak_mert_cakir.png,5,taste,9
 Tatbak,Gokay Baydemir,"Delicious doner. I went there with my friend, that was she's first. She liked too.",dataset/taste/tatbak_gokay_baydemir.png,5,taste,82
 Tatbak,Unsal Ceylan,"Nice place, good price; good quality",dataset/menu/tatbak_unsal_ceylan.png,5,menu,36
 Tatbak,Leyla Ciftci,Delicious!,dataset/taste/tatbak_leyla_ciftci.png,4,taste,10
@@ -213,6 +215,7 @@ Vefa Bozacisi,Ela Ensar,Boza's are beautiful. The ones on sale are also freshly 
 Vefa Bozacisi,Volkan Cosgun,Same taste for years. Its historical texture is another beautiful place.,dataset/indoor_atmosphere/vefa_bozacisi_volkan_cosgun.png,3,indoor_atmosphere,72
 Vefa Bozacisi,Yigit Candur,The taste is very good; and you can buy some roasted chickpeas; and it will be very high. Employees should be smiling.,dataset/outdoor_atmosphere/vefa_bozacisi_yigit_candur.png,4,outdoor_atmosphere,118
 Vefa Bozacisi,Selcuk Polat,The number of tables is very small; but no problem; the taste was very good.,dataset/indoor_atmosphere/vefa_bozacisi_selcuk_polat.png,3,indoor_atmosphere,76
+Vefa Bozacisi,Cigdem Kutlu,Perfect!,dataset/taste/vefa_bozacisi_cigdem_kutlu.png,5,taste,8
 Vefa Bozacisi,Berkay Genc,I don't understand what kind of business it is to sell boza in a foam glass. Offering chickpeas is a tradition next to the spoiler; but in Vefa you have to go and buy it yourself from the shop on the opposite side.,dataset/menu/vefa_bozacisi_berkay_genc.png,1,menu,214
 Vefa Bozacisi,Muhammed Duman,Vefa Bozacisi must be the most beautiful place that comes to mind when Boza is mentioned. The groceries are quite affordable.,dataset/outdoor_atmosphere/vefa_bozacisi_muhammed_duman.png,5,outdoor_atmosphere,125
 Vefa Bozacisi,Merve Ayda,It is a flavor that can be tried when you go to Istanbul.,dataset/taste/vefa_bozacisi_merve_ayda.png,4,taste,57
@@ -224,6 +227,7 @@ Salacak,Mehmet Yavuz,Different from the price on the menu Price has been applied
 Salacak,Hikmet Tan,A taste that hasn't changed for years with its legendary view and taste!,dataset/menu/salacak_hikmet_tan.png,5,menu,72
 Salacak,Osman Tamyurek,You can go even for the view... The interest is very beautiful.. Those who want to eat meat (Halal food) should definitely stop by.,dataset/outdoor_atmosphere/salacak_osman_tamyurek.png,5,outdoor_atmosphere,131
 Salacak,Hulya Azim,We finished Iskender and Doner Burger with difficulty two weeks ago; we couldn't start the dessert part because there was no appetite for tail fat.,dataset/taste/salacak_hulya_azim.png,2,taste,147
+Salacak,Muhammed Bayalan,Great.,dataset/menu/salacak_muhammed_bayalan.png,4,menu,6
 Salacak,Nur Aydin,Ambiance was amazing!,dataset/indoor_atmosphere/salacak.nur_aydin.png,5,indoor_atmosphere,21
 Salacak,Samed Demirel,I think they make very good doner kebabs. We did not have any problems with the service. We parted happily as a family. As for the price; I think such a place has a very good tariff for such a view.,dataset/indoor_atmosphere/salacak_samed_demirel.png,5,indoor_atmosphere,198
 Nusr-et,Kaan Omak,"When we asked for a hamburger, we were told that it was not left; but the hamburger came to the side table; I'm breaking two points from here; other than that it was good.",dataset/taste/nusr-et_kaan_omak.png,3,taste,171
@@ -258,6 +262,7 @@ Cici Tantuni,Sukru Ardic,The ambiance of the place was a bit dark.,dataset/indoo
 Cici Tantuni,Veli Dedeoglu,I tried tantuni with yoghurt for the first time. The taste was perfect. I would recommend it to everyone. It reminds me of the taste of iskender.,dataset/taste/cici_tantuni_veli_dedeoglu.png,5,taste,145
 Cici Tantuni,Sila Bakirci,Prices are like that.,dataset/menu/cici_tantuni_sila_bakirci.png,4,menu,21
 Cici Tantuni,Deniz Bilgin,It was very oily; but good in taste. Prices are a little higher than usual.,dataset/outdoor_atmosphere/cici_tantuni_deniz_bilgin.png,4,outdoor_atmosphere,75
+Cici Tantuni,Alp Tekin,Not bad.,dataset/taste/cici_tantuni_alp_tekin.png,3,taste,8
 Bunbun Kas,Yaren Sardic,If you want a different taste in Kaş; they serve it by putting meat; chicken or meatballs cooked for a long time on the bun bread; you can order the drink separately with fried potatoes.,dataset/indoor_atmosphere/bunbun_kas_yaren_sardic.png,5,indoor_atmosphere,186
 Bunbun Kas,Burak Efendioglu,A fast food restaurant with very friendly staff. It didn't appeal to my taste at all. Undercooked dough and lint meat.,dataset/outdoor_atmosphere/bunbun_kas_burak_efendioglu.png,3,outdoor_atmosphere,118
 Bunbun Kas,Metehan Kilic,Overall it wasn't bad. It was delicious and ice cold. Mohair meat was delicious. The fries were nice. However; the bread that gives the place its name is a disappointment.,dataset/taste/bunbun_kas_metehan_kilic.png,4,taste,171
@@ -287,6 +292,7 @@ Nazar Cafe,Ali Arslan,The cheddar pastry was very bad compared to the past. It h
 Nazar Cafe,Berkay Tasdeviren,We went to eat dessert as a family and we were satisfied. It was a bit crowded.,dataset/outdoor_atmosphere/nazar_cafe_berkay_tasdeviren.png,4,outdoor_atmosphere,79
 Nazar Cafe,Nalan Kavskli,It's cold and extremely bad; the price of the food is way above its quality; 46 liras for 6 meatballs; 30 minutes or more waiting time. I definitely don't recommend it.,dataset/taste/nazar_cafe_nalan_kavskli.png,1,taste,168
 Nazar Cafe,Alper Kultufan,Very good quality and expensive also always crowded.,dataset/outdoor_atmosphere/nazar_cafe_alper_kultufan.png,4,outdoor_atmosphere,52
+Nazar Cafe,Kadir Turkoglu,Good.,dataset/menu/nazar_cafe_kadir_turkoglu.png,4,menu,5
 Nazar Cafe,Visam Gultekin,Everything you eat is very fresh and delicious. The back of the place is in the concept of a restaurant and the 2nd floor is in the concept of a cafe. We liked it very much.,dataset/indoor_atmosphere/nazar_cafe_visam_gultekin.png,5,indoor_atmosphere,173
 Nazar Cafe,Sevgi Taran,I ate awesome pasta; I recommend to you.,dataset/taste/nazar_cafe_sevgi_taran.png,5,taste,40
 Nazar Cafe,Gokce Sosyal,Recommend.,dataset/indoor_atmosphere/nazar_cafe_gokce_sosyal.png,4,indoor_atmosphere,10
@@ -307,6 +313,7 @@ Sushico,Sercan Kuzu,Great atmosphere!,dataset/outdoor_atmosphere/sushico_sercan_
 Sushico,Seckin Yogurtcu,Service was good; transportation was easy. Prices are above average. For those who don't like the taste of raw fish; I recommend roles instead of nigiri.,dataset/menu/sushico_seckin_yogurtcu.png,4,menu,153
 Sushico,Noah Ksante,The food is fresh; delicious and the atmosphere is quality as always.,dataset/indoor_atmosphere/sushico_noah_ksante.png,5,indoor_atmosphere,69
 Sushico,Baran Serin,Pretty good sushi; attentive; friendly service.,dataset/outdoor_atmosphere/sushico_baran_serin.png,5,outdoor_atmosphere,47
+Sushico,Hikmet Beral,Liked.,dataset/taste/sushico_hikmet_beral.png,4,taste,6
 Sushico,Nesrin Ergun,The flavors were good in general; the prices were a bit high.,dataset/menu/sushico_nesrin_ergun.png,4,menu,61
 Sushico,Fattuma Ramesy,It didn't suit my taste but my wife loved it. The place was beautiful.,dataset/taste/sushico_fattuma_ramesy.png,3,taste,70
 Sushico,Fethi Tekyaygil,Started off well with nice duck sushi and prawn gyoza; but was given wrong meat in pad Thai so sent it back. No apologies. Ordered spring rolls; they never came.,dataset/indoor_atmosphere/sushico_fethi_tekyaygil.png,1,indoor_atmosphere,161
@@ -348,6 +355,7 @@ Bogazkoy Restaurant,Gokce Mazicioglu,Nice atmosphere; pleasant place. The employ
 Bogazkoy Restaurant,Metin Kurt,They do sushi every thursday and I missed so it was a little sad to miss it. Other than that; the food was good.,dataset/menu/bogazkoy_restaurant_metin_kurt.png,5,menu,112
 Bogazkoy Restaurant,Kadir Yurtlu,Definitely the best soufflé I've had in a long time. I am satisfied; I recommend.,dataset/taste/bogazkoy_restaurant_kadir_yurtlu.png,5,taste,81
 Bogazkoy Restaurant,Nafican Tatlici,Asian salmon pastas and salad varieties are very successful. They have not neglected to share the secret of their taste.,dataset/indoor_atmosphere/bogazkoy_restaurant_nafican_tatlici.png,4,indoor_atmosphere,120
+Bogazkoy Restaurant,Mehmet Karahanli,Not bad.,dataset/outdoor_atmosphere/bogazkoy_restaurant_mehmet_karahanli.png,3,outdoor_atmosphere,8
 Bogazkoy Restaurant,Zeynep Hulusi,Souffle heaven has a wonderful variety of flavors; I highly recommend it.,dataset/indoor_atmosphere/bogazkoy_restaurant_zeynep_hulusi.png,5,indoor_atmosphere,73
 Bogazkoy Restaurant,Zafer Nahhas,The waiters were understanding; but the food came cold and late.,dataset/indoor_atmosphere/bogazkoy_restaurant_zafer_nahhas.png,3,indoor_atmosphere,64
 Bogazkoy Restaurant,Yusuf Arslan,I tried Antep taco; I liked.,dataset/menu/bogazkoy_restaurant_yusuf_arslan.png,4,menu,28
@@ -415,6 +423,7 @@ Bilice,Pinar Atici,The view is nice; the indoor seating area is quite large.,dat
 Bilice,Engin Serin,It is a place to eat good pastries in Sariyer. I recommend you to try the mince raisin. Tea 5 TL 1 portion of Meat Pie with Raisins 30 TL,dataset/menu/bilice_engin_serin.png,5,menu,137
 Bilice,Murat Kirmizi,Pastries varieties and pogaca are delicious. There are also breakfast options available. The staff is caring and helpful. Service is fast. I think the prices are reasonable.,dataset/outdoor_atmosphere/bilice_murat_kirmizi.png,4,outdoor_atmosphere,173
 Bilice,Ugur Ozubek,Good with potatoes; good with cheese; medium with spinach; medium with minced meat. Plain pastry was good; pastry was good. I did not like the tea.,dataset/outdoor_atmosphere/bilice_ugur_ozubek.png,4,outdoor_atmosphere,147
+Bilice,Nalan Deniz,Great.,dataset/indoor_atmosphere/bilice_nalan_deniz.png,5,indoor_atmosphere,6
 Bilice,Selahattin Yilmaz,The prices were too high for a place that sells pastries or pastries.,dataset/menu/bilice_selahattin_yilmaz.png,3,menu,69
 Bilice,Mevlut Sahin,I'm a regular at currants and pastries with minced meat. It is both delicious and definitely does not disturb the stomach after eating.,dataset/outdoor_atmosphere/bilice_mevlut_sahin.png,4,outdoor_atmosphere,135
 Bilice,Orhan Uslu,Service sucks. Customer care is below zero. The view is very good but the place is extremely neglected.,dataset/outdoor_atmosphere/bilice_orhan_uslu.png,3,outdoor_atmosphere,103
@@ -534,6 +543,7 @@ Askin Tostevi,Zafer Kulekci,Small busy place. We didn't wait long; service was f
 Askin Tostevi,Ali Palamut,First of all; they don't accept credit cards. The place is small; you can wait in line to sit. It's worth the taste.,dataset/taste/askin_tostevi_ali_palamut.png,4,taste,116
 Askin Tostevi,Huseyin Ozer,I loved it; with one word it was legendary. In other words; it is the best toast you can eat outside. The price is 35 TL for full Ayvalik toast; Ayran Lemonade is 15 TL.,dataset/indoor_atmosphere/askin_tostevi_huseyin_ozer.png,5,indoor_atmosphere,169
 Askin Tostevi,Muharrem Osanmaz,Bread; cheese; sausage all left incredible flavors on our palate. We recommend it to everyone who will go to Ayvalık.,dataset/menu/askin_tostevi_muharrem_osanmaz.png,4,menu,117
+Askin Tostevi,Emrah Yasar,Liked.,dataset/outdoor_atmosphere/askin_tostevi_emrah_yasar.png,4,outdoor_atmosphere,6
 Askin Tostevi,Sema Sabancioglu,We paid 150 TL for 2 toast and 2 ayran. The only address of Ayvalık Toast. There are many queues; but the queue moves very quickly. Worth the wait.,dataset/taste/askin_tostevi_sema_sabancioglu.png,5,taste,147
 Askin Tostevi,Yaren Mihcioglu,Ambiance could be better.,dataset/indoor_atmosphere/askin_tostevi_yaren_mihcioglu.png,4,indoor_atmosphere,25
 Askin Tostevi,Cansel Caka,The place had problems with cleanliness. Prices were a little expensive.,dataset/outdoor_atmosphere/askin_tostevi_cansel_caka.png,3,outdoor_atmosphere,72
@@ -571,6 +581,7 @@ Kaliteci,Shima Rahman,Great cafe. Excellent staff. Brilliant cakes and pastries.
 Kaliteci,Seyhan Cavit,Thanks for great breakfast experience!,dataset/taste/kaliteci_seyhan_cavit.png,5,taste,38
 Kaliteci,Fatih Bilgic,It seems like the products were better last year.. There is always a queue.,dataset/outdoor_atmosphere/kaliteci_fatih_bilgic.png,4,outdoor_atmosphere,75
 Kaliteci,Egor Grai,The donut had no filling in it so it was like sweet bread.,dataset/taste/kaliteci_egor_grai.png,2,taste,58
+Kaliteci,Rasit Simsek,Loved.,dataset/outdoor_atmosphere/kaliteci_rasit_simsek.png,5,outdoor_atmosphere,6
 Sanukiya,Jinah Lee,Prices were cheap. But the queue was too long. I liked the flavors as a korean.,dataset/menu/sanukiya_jinah_lee.png,4,menu,79
 Sanukiya,Sean Lee,A delicious udon that you can enjoy even in the middle of summer! It was very hot; cramped and crowded with people and I had two bowls of udon and a side dish with two bottles of booze.,dataset/outdoor_atmosphere/sanukiya_sean_lee.png,4,outdoor_atmosphere,185
 Sanukiya,Ashley Hsu,The set composition was good! Chicken egg rice and karaage were delicious. Many Koreans come here for udon. Waiters are friendly and service is fast!,dataset/taste/sanukiya_ashles_hsu.png,3,taste,149
@@ -673,6 +684,7 @@ Magro,Mustafa Acar,Margarita pizza is pretty good. The atmosphere is also nice. 
 Duveroglu,Saliha Senyildiz,We came here for the first time; we just tried the doner; it was good; the treats were not bad; the staff was very interested.,dataset/indoor_atmosphere/duveroglu_saliha_senyildiz.png,5,indoor_atmosphere,126
 Duveroglu,Adil Korkmaz,Lahmacun tasted good and was filling. Some of the ingredients used in the salad started to deteriorate.,dataset/taste/duveroglu_adil_korkmaz.png,3,taste,103
 Duveroglu,Aylin Saglam,They've updated the prices and it's as if they have reduced the portions. It is irritating that the edges of the plates are broken.,dataset/menu/duveroglu_aylin_saglam.png,3,menu,131
+Duveroglu,Cihan Kures,Liked.,dataset/outdoor_atmosphere/duveroglu_cihan_kures.png,5,outdoor_atmosphere,6
 Duveroglu,Murat Cihanoglu,I didn't like Iskender; the meat was not of good quality.,dataset/taste/duveroglu_murat_cihanoglu.png,3,taste,57
 Duveroglu,Cigdem Karakaya,Even though it's not as good as it used to be; it's still my choice. I would be more satisfied if they boiled the stuffed meatballs.,dataset/indoor_atmosphere/duveroglu_cigdem_karakaya.png,3,indoor_atmosphere,132
 Duveroglu,Can Akkaynak,Good in general. Quality for Kızılay and its surroundings. Lahmacun doesn't taste old.,dataset/menu/duveroglu_can_akkaynak.png,4,menu,86
@@ -687,6 +699,7 @@ Rumeli Iskembecisi,Buket Aydin,Portion is enough; taste is average; but unfortun
 Rumeli Iskembecisi,Efe Arslan,I found the trotter soup I was looking for; it was very nice; thank you. Employees are not friendly.,dataset/outdoor_atmosphere/rumeli_iskembecisi_efe_arslan.png,4,outdoor_atmosphere,100
 Rumeli Iskembecisi,Abu Ahmet,The trotter soup I drank here is among the top 3 soups I've had in my life. The food of the place is very delicious; the service is impeccable.,dataset/indoor_atmosphere/rumeli_iskembecisi_abu_ahmet.png,5,indoor_atmosphere,143
 Rumeli Iskembecisi,Emre Yildirim,The taste is excellent; the portion size is good; the price is a bit expensive.,dataset/taste/rumeli_iskembecisi_emre_yildirim.png,5,taste,79
+Rumeli Iskembecisi,Adil Kucukaga,Amazing!,dataset/outdoor_atmosphere/rumeli_iskembecisi_adil_kucukaga.png,5,outdoor_atmosphere,8
 Rumeli Iskembecisi,Rahmi Aydin,The business demands money from everything; no treats!,dataset/menu/rumeli_iskembecisi_rahmi_aydin.png,4,menu,54
 Rumeli Iskembecisi,Ozcan Oner,Ankara's oldest and most beautiful soup restourant. Soups with very good hygiene can be eaten and drunk with peace of mind. Service is fast. Prices are a little high.,dataset/indoor_atmosphere/rumeli_iskembecisi_ozcan_oner.png,4,indoor_atmosphere,166
 Rumeli Iskembecisi,Serdar Sezgin,Clean and decent place. I think it would be better if the soup was hot and fresh if there were bread facilities that came with it.,dataset/taste/rumeli_iskembecisi_serdar_sezgin.png,4,taste,130
