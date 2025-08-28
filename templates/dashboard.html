@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Moderation Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .dashboard-card {
+            transition: transform 0.2s;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .dashboard-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        .metric-icon {
+            font-size: 2rem;
+            margin-right: 0.5rem;
+        }
+        .status-approved { color: #28a745; }
+        .status-flagged { color: #ffc107; }
+        .status-removed { color: #dc3545; }
+        .status-monitor { color: #6c757d; }
+        .review-item {
+            border-left: 4px solid #007bff;
+            margin-bottom: 1rem;
+        }
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-shield-alt"></i>
+                Review Moderation Dashboard
+            </a>
+            <div class="navbar-nav ms-auto">
+                <span class="navbar-text">
+                    <i class="fas fa-clock"></i>
+                    <span id="current-time"></span>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <!-- Dashboard Header -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <h2 class="text-center mb-4">
+                    <i class="fas fa-tachometer-alt"></i>
+                    System Overview
+                </h2>
+            </div>
+        </div>
+
+        <!-- Key Metrics -->
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <div class="card dashboard-card bg-primary text-white">
+                    <div class="card-body d-flex align-items-center">
+                        <i class="fas fa-list-alt metric-icon"></i>
+                        <div>
+                            <h4 class="mb-0" id="total-processed">0</h4>
+                            <small>Total Processed</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card dashboard-card bg-success text-white">
+                    <div class="card-body d-flex align-items-center">
+                        <i class="fas fa-check-circle metric-icon"></i>
+                        <div>
+                            <h4 class="mb-0" id="approved-count">0</h4>
+                            <small>Auto-Approved</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card dashboard-card bg-warning text-dark">
+                    <div class="card-body d-flex align-items-center">
+                        <i class="fas fa-flag metric-icon"></i>
+                        <div>
+                            <h4 class="mb-0" id="flagged-count">0</h4>
+                            <small>Flagged</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card dashboard-card bg-danger text-white">
+                    <div class="card-body d-flex align-items-center">
+                        <i class="fas fa-times-circle metric-icon"></i>
+                        <div>
+                            <h4 class="mb-0" id="removed-count">0</h4>
+                            <small>Auto-Removed</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content Row -->
+        <div class="row">
+            <!-- Process Review Form -->
+            <div class="col-md-6">
+                <div class="card dashboard-card">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-plus-circle"></i>
+                            Process New Review
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="review-form">
+                            <div class="mb-3">
+                                <label for="review-text" class="form-label">Review Text</label>
+                                <textarea class="form-control" id="review-text" rows="4" 
+                                    placeholder="Enter the review text here..." required></textarea>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label for="rating" class="form-label">Rating</label>
+                                    <select class="form-select" id="rating">
+                                        <option value="1">1 ⭐</option>
+                                        <option value="2">2 ⭐</option>
+                                        <option value="3" selected>3 ⭐</option>
+                                        <option value="4">4 ⭐</option>
+                                        <option value="5">5 ⭐</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="author" class="form-label">Author</label>
+                                    <input type="text" class="form-control" id="author" placeholder="Optional">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="business" class="form-label">Business</label>
+                                    <input type="text" class="form-control" id="business" placeholder="Optional">
+                                </div>
+                            </div>
+                            <div class="mt-3">
+                                <button type="submit" class="btn btn-primary w-100">
+                                    <i class="fas fa-rocket"></i>
+                                    Process Review
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Processing Result -->
+                <div id="processing-result" class="mt-3" style="display: none;">
+                    <div class="card dashboard-card">
+                        <div class="card-header bg-success text-white">
+                            <h6 class="mb-0">
+                                <i class="fas fa-check-circle"></i>
+                                Processing Result
+                            </h6>
+                        </div>
+                        <div class="card-body" id="result-content">
+                            <!-- Result will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts and Analytics -->
+            <div class="col-md-6">
+                <div class="card dashboard-card">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-chart-pie"></i>
+                            Action Distribution
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="action-chart" width="400" height="200"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Reviews -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card dashboard-card">
+                    <div class="card-header bg-secondary text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-history"></i>
+                            Recent Reviews
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="recent-reviews">
+                            <p class="text-muted text-center">No reviews processed yet. Start by processing a review above!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Manual Review Queue -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="card dashboard-card">
+                    <div class="card-header bg-warning text-dark">
+                        <h5 class="mb-0">
+                            <i class="fas fa-user-check"></i>
+                            Manual Review Queue
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="flagged-reviews">
+                            <p class="text-muted text-center">No reviews flagged for manual review.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Initialize charts
+        const ctx = document.getElementById('action-chart').getContext('2d');
+        const actionChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Approved', 'Flagged', 'Removed', 'Monitor'],
+                datasets: [{
+                    data: [0, 0, 0, 0],
+                    backgroundColor: ['#28a745', '#ffc107', '#dc3545', '#6c757d']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        // Update current time
+        function updateTime() {
+            document.getElementById('current-time').textContent = new Date().toLocaleString();
+        }
+        updateTime();
+        setInterval(updateTime, 1000);
+
+        // Load initial stats
+        function loadStats() {
+            fetch('/api/stats')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('total-processed').textContent = data.total_processed;
+                    document.getElementById('approved-count').textContent = data.approved;
+                    document.getElementById('flagged-count').textContent = data.flagged;
+                    document.getElementById('removed-count').textContent = data.removed;
+                    
+                    // Update chart
+                    actionChart.data.datasets[0].data = [data.approved, data.flagged, data.removed, data.monitored];
+                    actionChart.update();
+                });
+        }
+
+        // Load recent reviews
+        function loadRecentReviews() {
+            fetch('/api/reviews?per_page=5')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('recent-reviews');
+                    if (data.reviews.length === 0) {
+                        container.innerHTML = '<p class="text-muted text-center">No reviews processed yet.</p>';
+                        return;
+                    }
+                    
+                    container.innerHTML = data.reviews.map(review => `
+                        <div class="review-item p-3 bg-white rounded shadow-sm">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div class="flex-grow-1">
+                                    <p class="mb-1"><strong>Text:</strong> ${review.text.substring(0, 100)}...</p>
+                                    <small class="text-muted">
+                                        <i class="fas fa-user"></i> ${review.author} | 
+                                        <i class="fas fa-star"></i> ${review.rating} stars | 
+                                        <i class="fas fa-clock"></i> ${new Date(review.timestamp).toLocaleString()}
+                                    </small>
+                                </div>
+                                <div class="text-end">
+                                    <span class="badge bg-primary">${review.quality_prediction.replace('_', ' ')}</span><br>
+                                    <span class="badge bg-secondary">${(review.confidence * 100).toFixed(1)}%</span><br>
+                                    <span class="badge ${getActionBadgeClass(review.action)}">${review.action}</span>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('');
+                });
+        }
+
+        // Load flagged reviews
+        function loadFlaggedReviews() {
+            fetch('/api/flagged_reviews')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('flagged-reviews');
+                    if (data.length === 0) {
+                        container.innerHTML = '<p class="text-success text-center"><i class="fas fa-check-circle"></i> No reviews flagged for manual review!</p>';
+                        return;
+                    }
+                    
+                    container.innerHTML = data.map(review => `
+                        <div class="alert alert-warning">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h6>Review ID: ${review.id}</h6>
+                                    <p><strong>Text:</strong> ${review.text}</p>
+                                    <small>Author: ${review.author} | Rating: ${review.rating} stars | Confidence: ${(review.confidence * 100).toFixed(1)}%</small>
+                                </div>
+                                <div>
+                                    <button class="btn btn-sm btn-success me-2">Approve</button>
+                                    <button class="btn btn-sm btn-danger">Remove</button>
+                                </div>
+                            </div>
+                        </div>
+                    `).join('');
+                });
+        }
+
+        function getActionBadgeClass(action) {
+            switch(action) {
+                case 'APPROVE': return 'bg-success';
+                case 'FLAG_FOR_REVIEW': return 'bg-warning';
+                case 'REMOVE': return 'bg-danger';
+                case 'MONITOR': return 'bg-secondary';
+                default: return 'bg-secondary';
+            }
+        }
+
+        // Process review form
+        document.getElementById('review-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                text: document.getElementById('review-text').value,
+                rating: parseInt(document.getElementById('rating').value),
+                author: document.getElementById('author').value,
+                business: document.getElementById('business').value
+            };
+            
+            fetch('/api/process_review', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    const result = data.result;
+                    document.getElementById('result-content').innerHTML = `
+                        <div class="row">
+                            <div class="col-md-4">
+                                <strong>Quality:</strong><br>
+                                <span class="badge bg-primary">${result.quality_prediction.replace('_', ' ')}</span>
+                            </div>
+                            <div class="col-md-4">
+                                <strong>Confidence:</strong><br>
+                                <span class="badge bg-info">${(result.confidence * 100).toFixed(1)}%</span>
+                            </div>
+                            <div class="col-md-4">
+                                <strong>Action:</strong><br>
+                                <span class="badge ${getActionBadgeClass(result.action)}">${result.action}</span>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <strong>Explanation:</strong><br>
+                            <small class="text-muted">${result.explanation}</small>
+                        </div>
+                    `;
+                    document.getElementById('processing-result').style.display = 'block';
+                    
+                    // Refresh data
+                    loadStats();
+                    loadRecentReviews();
+                    loadFlaggedReviews();
+                    
+                    // Clear form
+                    document.getElementById('review-form').reset();
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error processing review. Please try again.');
+            });
+        });
+
+        // Load data on page load
+        loadStats();
+        loadRecentReviews();
+        loadFlaggedReviews();
+
+        // Auto-refresh every 30 seconds
+        setInterval(() => {
+            loadStats();
+            loadRecentReviews();
+            loadFlaggedReviews();
+        }, 30000);
+    </script>
+</body>
+</html>
