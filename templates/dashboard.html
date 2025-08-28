@@ -113,6 +113,70 @@
 
         <!-- Main Content Row -->
         <div class="row">
+            <!-- Spam Detection Test -->
+            <div class="col-md-6">
+                <div class="card dashboard-card">
+                    <div class="card-header bg-warning text-dark">
+                        <h5 class="mb-0">
+                            <i class="fas fa-search"></i>
+                            Spam Detection Test
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="spam-test-form">
+                            <div class="mb-3">
+                                <label for="spam-test-text" class="form-label">Test Review Text</label>
+                                <textarea class="form-control" id="spam-test-text" rows="3" 
+                                    placeholder="Enter review text to test for spam..." required></textarea>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="spam-test-rating" class="form-label">Rating</label>
+                                    <select class="form-select" id="spam-test-rating">
+                                        <option value="1">1 Star</option>
+                                        <option value="2">2 Stars</option>
+                                        <option value="3" selected>3 Stars</option>
+                                        <option value="4">4 Stars</option>
+                                        <option value="5">5 Stars</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 d-flex align-items-end">
+                                    <button type="submit" class="btn btn-warning w-100">
+                                        <i class="fas fa-search"></i>
+                                        Test for Spam
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        
+                        <!-- Spam Test Result -->
+                        <div id="spam-test-result" class="mt-3" style="display: none;">
+                            <div class="card">
+                                <div class="card-body" id="spam-result-content">
+                                    <!-- Spam test result will be populated here -->
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Quick Test Examples -->
+                        <div class="mt-3">
+                            <h6>Quick Test Examples:</h6>
+                            <div class="btn-group-vertical w-100" role="group">
+                                <button type="button" class="btn btn-outline-secondary btn-sm test-example" 
+                                    data-text="Great food and excellent service! Really enjoyed my meal here."
+                                    data-rating="5">Legitimate Review</button>
+                                <button type="button" class="btn btn-outline-secondary btn-sm test-example"
+                                    data-text="Amazing place!!! Call 555-123-4567 for special discount! Best deals in town, hurry up!!!"
+                                    data-rating="5">Promotional Spam</button>
+                                <button type="button" class="btn btn-outline-secondary btn-sm test-example"
+                                    data-text="INCREDIBLE!!! BEST EVER!!! AMAZING!!! PERFECT!!! OUTSTANDING!!!"
+                                    data-rating="5">Fake Positive</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <!-- Process Review Form -->
             <div class="col-md-6">
                 <div class="card dashboard-card">
@@ -366,6 +430,36 @@
             .then(data => {
                 if (data.success) {
                     const result = data.result;
+                    let spamSection = '';
+                    
+                    // Add spam detection results if available
+                    if (result.spam_detection) {
+                        const spam = result.spam_detection;
+                        const spamStatus = spam.is_spam ? 
+                            `<span class="badge bg-danger">🚨 SPAM DETECTED</span>` :
+                            `<span class="badge bg-success">✅ LEGITIMATE</span>`;
+                        
+                        spamSection = `
+                            <div class="alert ${spam.is_spam ? 'alert-danger' : 'alert-success'} mt-3">
+                                <h6><i class="fas fa-shield-alt"></i> Spam Detection</h6>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <strong>Status:</strong><br>
+                                        ${spamStatus}
+                                    </div>
+                                    <div class="col-md-4">
+                                        <strong>Confidence:</strong><br>
+                                        <span class="badge bg-info">${(spam.spam_confidence * 100).toFixed(1)}%</span>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <strong>Spam Probability:</strong><br>
+                                        <span class="badge bg-warning">${(spam.spam_probability * 100).toFixed(1)}%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }
+                    
                     document.getElementById('result-content').innerHTML = `
                         <div class="row">
                             <div class="col-md-4">
@@ -381,6 +475,7 @@
                                 <span class="badge ${getActionBadgeClass(result.action)}">${result.action}</span>
                             </div>
                         </div>
+                        ${spamSection}
                         <div class="mt-3">
                             <strong>Explanation:</strong><br>
                             <small class="text-muted">${result.explanation}</small>
@@ -400,6 +495,92 @@
             .catch(error => {
                 console.error('Error:', error);
                 alert('Error processing review. Please try again.');
+            });
+        });
+
+        // Spam detection test form
+        document.getElementById('spam-test-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                text: document.getElementById('spam-test-text').value,
+                rating: parseInt(document.getElementById('spam-test-rating').value)
+            };
+            
+            fetch('/api/test_spam', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    const result = data.result;
+                    const spamStatus = result.is_spam ? 
+                        '<span class="badge bg-danger fs-6">🚨 SPAM DETECTED</span>' :
+                        '<span class="badge bg-success fs-6">✅ LEGITIMATE REVIEW</span>';
+                    
+                    document.getElementById('spam-result-content').innerHTML = `
+                        <h6>Analysis Result</h6>
+                        <div class="row mb-3">
+                            <div class="col-12 text-center">
+                                ${spamStatus}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <strong>Spam Probability:</strong><br>
+                                <span class="badge bg-warning">${(result.spam_probability * 100).toFixed(1)}%</span>
+                            </div>
+                            <div class="col-md-6">
+                                <strong>Confidence:</strong><br>
+                                <span class="badge bg-info">${(result.confidence * 100).toFixed(1)}%</span>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <strong>Analysis:</strong><br>
+                            <small class="text-muted">${result.explanation}</small>
+                        </div>
+                        <div class="mt-3">
+                            <h6>Feature Analysis</h6>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <small>
+                                        <strong>Text Length:</strong> ${result.features.length}<br>
+                                        <strong>Word Count:</strong> ${result.features.word_count}<br>
+                                        <strong>Promotional Words:</strong> ${result.features.promo_word_count}<br>
+                                        <strong>Exclamation Marks:</strong> ${result.features.exclamation_count}
+                                    </small>
+                                </div>
+                                <div class="col-md-6">
+                                    <small>
+                                        <strong>Caps Ratio:</strong> ${(result.features.caps_ratio * 100).toFixed(1)}%<br>
+                                        <strong>Contact Info:</strong> ${(result.features.has_phone + result.features.has_email + result.features.has_website)}<br>
+                                        <strong>Urgency Words:</strong> ${result.features.urgency_count}<br>
+                                        <strong>Sentiment:</strong> ${result.features.sentiment_polarity.toFixed(2)}
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    document.getElementById('spam-test-result').style.display = 'block';
+                } else {
+                    alert('Error: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error testing spam detection. Please try again.');
+            });
+        });
+
+        // Test example buttons
+        document.querySelectorAll('.test-example').forEach(button => {
+            button.addEventListener('click', function() {
+                document.getElementById('spam-test-text').value = this.dataset.text;
+                document.getElementById('spam-test-rating').value = this.dataset.rating;
             });
         });
 
