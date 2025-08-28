@@ -144,9 +144,7 @@ def generate_report(results: List[Dict[str, Any]]) -> pd.DataFrame:
 
 if __name__ == "__main__":
     # Load dataset
-    df = pd.read_csv("./data/reviews_cleaned.csv")
-    
-    # Use only a subset for testing
+    df = pd.read_csv("reviews_cleaned.csv")
     all_reviews = df["text"].dropna().tolist()
 
     results = analyze_reviews_batch(all_reviews, batch_size=2)
