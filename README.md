@@ -1,19 +1,19 @@
-# 🎭 TikTok Review Analysis Dashboard
+#  TikTok Review Analysis Dashboard
 
 Modern AI-powered fake review detection system using Qwen 2.5-3B-Instruct transformer model with multimodal classification and clean, professional interface.
 
-## 🚀 Features
+##  Features
 
-- **🤖 Advanced AI Classification**: Real Qwen transformer model with contextual understanding
-- **🎨 Modern Dashboard**: Clean, professional interface with Inter font and gradient design
-- **🔍 Multimodal Analysis**: Combines text analysis, metadata patterns, and feature extraction
-- **⭐ Rating-Text Contradiction Detection**: Intelligent mismatch identification
-- **📊 Real-time Metrics**: Interactive dashboard with hover effects and responsive design
-- **🎯 Smart Recommendations**: AI-powered action suggestions with confidence scoring
-- **⚡ Optimized Performance**: 4-bit quantization for efficient GPU usage
-- **🧪 Comprehensive Testing**: Full test suite for all classification components
+- ** Advanced AI Classification**: Real Qwen transformer model with contextual understanding
+- ** Modern Dashboard**: Clean, professional interface with Inter font and gradient design
+- ** Multimodal Analysis**: Combines text analysis, metadata patterns, and feature extraction
+- ** Rating-Text Contradiction Detection**: Intelligent mismatch identification
+- ** Real-time Metrics**: Interactive dashboard with hover effects and responsive design
+- ** Smart Recommendations**: AI-powered action suggestions with confidence scoring
+- ** Optimized Performance**: 4-bit quantization for efficient GPU usage
+- ** Comprehensive Testing**: Full test suite for all classification components
 
-## 🏃‍♂️ Quick Start
+##  Quick Start
 
 1. **Install Dependencies**:
    ```bash
@@ -27,13 +27,13 @@ Modern AI-powered fake review detection system using Qwen 2.5-3B-Instruct transf
 
 3. **Access Dashboard**: Open http://localhost:8501 in your browser
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 TikTokHack/
-├── app.py                          # 🚀 Main application entry point
-├── README.md                       # 📖 Project documentation
-├── requirements.txt                # 📦 Python dependencies
+├── app.py                          
+├── README.md                     
+├── requirements.txt           
 ├── backend/                        # 🔧 Core AI models and utilities
 │   ├── models/
 │   │   ├── qwen_classifier.py     # 🤖 Qwen AI classifier
@@ -41,18 +41,18 @@ TikTokHack/
 │   └── utils/
 │       ├── feature_extractor.py   # 🔍 Feature extraction
 │       └── recommendation_engine.py # 🎯 Smart recommendations
-├── frontend/                       # 🎨 UI components
+├── frontend/                       
 │   └── components/
-│       └── dashboard_components.py # 📊 Dashboard widgets
-├── tests/                          # 🧪 Test suite
-│   ├── test_*.py                  # Unit tests
-│   ├── debug_*.py                 # Debug utilities
-│   └── *_test.py                  # Integration tests
+│       └── dashboard_components.py 
+├── tests/                          
+│   ├── test_*.py                  
+│   ├── debug_*.py                 
+│   └── *_test.py                  
 └── data/                          # 📂 Sample datasets
     └── Google Map Reviews/
 ```
 
-## 🔧 Architecture
+##  Architecture
 
 ### Core Components
 
@@ -68,7 +68,7 @@ TikTokHack/
 Review Text → Feature Extraction → Qwen Classification → Metadata Analysis → Recommendation → Display
 ```
 
-## 📊 Classification Categories
+## Classification Categories
 
 ### High Priority (Remove/Flag)
 - **SPAM**: Contact info, promotional content, solicitation
@@ -94,7 +94,7 @@ Review Text → Feature Extraction → Qwen Classification → Metadata Analysis
 ### Language
 - **NON_ENGLISH**: Review written in non-English language
 
-## 🛠️ Quick Start
+## Quick Start
 
 ### 1. Install Dependencies
 ```bash
@@ -107,18 +107,18 @@ streamlit run qwen_dashboard.py
 ```
 
 ### 3. Load Model
-- Click "🚀 Load Qwen LLM Model" in sidebar
+- Click "Load Qwen LLM Model" in sidebar
 - Wait 2-3 minutes for initial model loading
 - Start classifying reviews
 
-## 💻 System Requirements
+## System Requirements
 
 - **GPU**: RTX 4060 or equivalent (8GB+ VRAM recommended)
 - **RAM**: 16GB+ system memory
 - **Python**: 3.8+
 - **CUDA**: Compatible CUDA installation
 
-## 🎯 Usage Examples
+## Usage Examples
 
 ### Single Review with Rating Analysis
 ```python
@@ -165,7 +165,7 @@ result = classifier.classify_review(
 # → Category: RATING_TEXT_MISMATCH
 ```
 
-## 📈 Enhanced Features
+## Enhanced Features
 
 ### Pattern Analysis
 - 15+ pattern detection algorithms
@@ -185,7 +185,7 @@ result = classifier.classify_review(
 - Enhanced reasoning generation
 - Priority-based category selection
 
-## 🔧 Technical Architecture
+## Technical Architecture
 
 ```
 Enhanced Classification Pipeline:
@@ -197,21 +197,21 @@ Enhanced Classification Pipeline:
 └── Output: Category + action + detailed analysis
 ```
 
-## 📝 Files
+## Files
 
 - **`qwen_dashboard.py`** - Streamlit web interface
 - **`qwen_review_pipeline.py`** - Core classifier with enhanced patterns
 - **`qwen_requirements.txt`** - Python dependencies
 - **`reviews_cleaned.csv`** - Training/test dataset
 
-## ⚡ Performance
+## Performance
 
 - **Accuracy**: Enhanced through pattern + LLM combination
 - **Speed**: 30-60 seconds per review (real AI inference)
 - **Memory**: ~4GB GPU VRAM with 4-bit quantization
 - **Throughput**: 1-2 reviews per minute (quality over speed)
 
-## 🎪 TikTok Hackathon Solution
+## TikTok Hackathon Solution
 
 This enhanced classifier provides:
 - Real AI understanding vs simple pattern matching
